@@ -1,3 +1,19 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+upload:
+    path: /upload-video
+    controller: App\Controller\VideoUploadController::index
+
+video_page:
+    path: /video-page/{slug}
+    controller: App\Controller\VideoPageController::index
+
+video_list:
+    path: /list-video
+    controller: App\Controller\ListVideoController::index
