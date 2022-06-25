@@ -13,7 +13,3 @@ upload:
 video_page:
     path: /video-page/{slug}
     controller: App\Controller\VideoPageController::index
-
-video_list:
-    path: /list-video
-    controller: App\Controller\ListVideoController::index
