@@ -10,4 +10,5 @@
 /migrations/
 /tests/
 /translations/
+/public/uploads
 ###< symfony/framework-bundle ###
