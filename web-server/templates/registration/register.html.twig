@@ -20,12 +20,17 @@
 								com grande qualidade.</p>
 						</div>
 						{{ form_start(registrationForm) }}
+						<div class="form-group">
 						{{ form_row(registrationForm.email) }}
+						</div>
+						<div class="form-group">
 						{{ form_row(registrationForm.plainPassword, {
                             label: 'Password'
                         }) }}
+						</div>
+						<div class="form-group">
 						{{ form_row(registrationForm.agreeTerms) }}
-
+						</div>
 						<div class="mt-4">
 							<button type="submit" class="btn btn-outline-primary btn-block btn-lg">Criar conta</button>
 						</div>
