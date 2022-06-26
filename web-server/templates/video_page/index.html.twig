@@ -10,7 +10,7 @@
 			<i class="fas fa-bars"></i>
 		</button>
 		&nbsp;&nbsp;
-		<a class="navbar-brand mr-1" href="index.html"><img class="img-fluid" alt="" src="{{asset('static/img/logo.png')}}"></a>
+		<a class="navbar-brand mr-1" href="{{path('home')}}"><img class="img-fluid" alt="" src="{{asset('static/img/logo.png')}}"></a>
 		<!-- Navbar Search -->
 		<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search">
 			<div class="input-group">
@@ -81,7 +81,7 @@
 									<a href="../uploads/{{ media.mediaFileName }}" class="btn btn-outline-primary btn-block btn-lg" download>Download</a>
 								</div>
 								<div class="single-video-author box mb-3">
-									<img class="img-fluid" src="img/s4.png" alt="">
+									<img class="img-fluid" src="{{asset('static/img/s4.png')}}" alt="">
 									<p>
 										<a href="#">
 											<strong>{{ media.owner.email }}
@@ -91,7 +91,7 @@
 											<i class="fas fa-check-circle text-success"></i>
 										</span>
 									</p>
-									<small>Published on
+									<small>Publicado em
 										{{ media.postDate | date('d/m/Y') }}</small>
 								</div>
 								<div class="single-video-info-content box mb-3">
@@ -122,8 +122,8 @@
 						</div>
 						<div class="col-lg-6 col-sm-6 text-right">
 							<div class="app">
-								<a href="#"><img alt="" src="img/google.png"></a>
-								<a href="#"><img alt="" src="img/apple.png"></a>
+								<a href="#"><img alt="" src="{{asset('static/img/google.png')}}"></a>
+								<a href="#"><img alt="" src="{{asset('static/img/apple.png')}}"></a>
 							</div>
 						</div>
 					</div>
