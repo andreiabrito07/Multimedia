@@ -11,4 +11,5 @@
 /tests/
 /translations/
 /public/uploads
+*.env
 ###< symfony/framework-bundle ###
