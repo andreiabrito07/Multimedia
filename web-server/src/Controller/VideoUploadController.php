@@ -8,8 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Gedmo\Sluggable\Util\Urlizer;
+use App\Entity\User;
 use App\Entity\Media;
 use App\Form\MediaFormType;
+
 
 class VideoUploadController extends AbstractController
 {
@@ -30,6 +32,9 @@ class VideoUploadController extends AbstractController
 
             $destination = $this->getParameter('kernel.project_dir') . '/public/uploads';
 
+            /** @var \App\Entity\User $user */
+            $user = $this->getUser();
+
             $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
             $newFilename = Urlizer::urlize($originalFilename) . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
 
@@ -39,6 +44,7 @@ class VideoUploadController extends AbstractController
             );
 
             $media->setMediaFileName($newFilename);
+            $media->setOwner($user);
 
             $entityManager->persist($media);
             $entityManager->flush();
