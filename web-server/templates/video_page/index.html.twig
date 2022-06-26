@@ -12,9 +12,9 @@
 		&nbsp;&nbsp;
 		<a class="navbar-brand mr-1" href="{{path('home')}}"><img class="img-fluid" alt="" src="{{asset('static/img/logo.png')}}"></a>
 		<!-- Navbar Search -->
-		<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search">
+		<form method="GET" action="{{path('pesquisa')}}" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search" >
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Search for...">
+				<input type="text" name="q" class="form-control" placeholder="Search for...">
 				<div class="input-group-append">
 					<button class="btn btn-light" type="button">
 						<i class="fas fa-search"></i>
