@@ -17,10 +17,12 @@ class PesquisaController extends AbstractController
     public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
         
-        $q = $request->query->get('q');
+        $q = (string)$request->query->get('q');
         $records = $entityManager->getRepository(Media::class)->findAll();
         
-        dump($records);
-        return $this->render('pesquisa/index.html.twig', ['records' => $records,]);
+        $matches = array_filter($records, function($var) use ($q) { return 
+        preg_match("/\b$q/i", $var->getTitulo()); });
+
+        return $this->render('pesquisa/index.html.twig', ['result' => $matches,]);
     }
 }
